@@ -17,7 +17,7 @@ const MostWanted = ({image, isFetching, error, getMostWanted}) => {
       }
     
     if (isFetching) {
-        return <h2>Fetching Data...</h2>;
+        return <h2>Fetching Data...</h2>; 
     }
 
     return(
