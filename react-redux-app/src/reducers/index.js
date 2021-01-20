@@ -1,25 +1,25 @@
-import { FETCH_WANTED_START, FETCH_WANTED_SUCCESS, FETCH_WANTED_FAIL} from '../actions';
+import { FETCH_IMAGE_START, FETCH_IMAGE_SUCCESS, FETCH_IMAGE_FAIL} from '../actions';
 
 const initialState = {
     image:''
 }
 export const reducer = (state = initialState, action) => {
     switch(action.type){
-        case(FETCH_WANTED_START):
+        case(FETCH_IMAGE_START):
             return({
                 ...state, 
                 image: action.payload,
                 isFetching:true,
                 error:'',
             });
-        case(FETCH_WANTED_SUCCESS):
+        case(FETCH_IMAGE_SUCCESS):
             return({
                 ...state,
                 image:action.payload,
                 isFetching:false,
                 error:'',
             });
-        case(FETCH_WANTED_FAIL):
+        case(FETCH_IMAGE_FAIL):
             return({
                 image:'',
                 isFetching:false,

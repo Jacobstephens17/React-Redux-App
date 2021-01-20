@@ -8,7 +8,8 @@ const MostWanted = ({image, isFetching, error, getMostWanted}) => {
         getMostWanted();
       }, []);
       
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault();
         getMostWanted();
     }
 
@@ -17,16 +18,15 @@ const MostWanted = ({image, isFetching, error, getMostWanted}) => {
       }
     
     if (isFetching) {
-        return <h2>Fetching Data...</h2>;
+        return <h2>Fetching Data...</h2>; 
     }
 
     return(
-        <div>
-            <h1>MOST WANTED: </h1>
-            <h2>Image Below:</h2> 
+        <StyledDiv>
+            <h1>Random Image Below:</h1> 
             <Image imgUrl={image} />
-            <button onClick={handleClick}>GetMostWanted</button>
-        </div>
+            <Button onClick={handleClick}>Get Image</Button>
+        </StyledDiv>
     )
 }
 
@@ -41,7 +41,25 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { getMostWanted })(MostWanted);
 
 const Image = styled.div`
-    width: 500px;
-    height: 500px;
-    background: url(${(props)=>props.imgUrl}); 
+    width: 100%;
+    height:900px;
+    background: url(${(props)=>props.imgUrl}) no-repeat; 
+    background-size:500px;
+`
+
+const StyledDiv = styled.div`
+    display:flex;
+    flex-direction:column;
+    margin:0 auto;
+    width:25%;
+    justify-content:center;
+    justify-items:center;
+    align-items:center;
+    align-content:center;
+`
+
+const Button = styled.button`
+    padding:2rem 5rem;
+    border-radius:4px;
+    margin-top:0%;
 `
