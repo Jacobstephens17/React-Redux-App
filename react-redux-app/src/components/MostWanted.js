@@ -77,5 +77,4 @@ const H2 = styled.h2`
 color:white;
 background-color:black;
 width:100%;
-height:auto;
 `

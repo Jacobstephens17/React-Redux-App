@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const FETCH_IMAGE_START = "FETCH_IMAGE_START";
 export const FETCH_IMAGE_FAIL = "FETCH_IMAGE_FAIL";
 export const FETCH_IMAGE_SUCCESS = "FETCH_IMAGE_SUCCESS";
@@ -17,5 +16,4 @@ export const getMostWanted = () => dispatch => {
         .catch(err => {
             dispatch({ type:FETCH_IMAGE_FAIL, payload: err.res.code});
         });
-
 }
